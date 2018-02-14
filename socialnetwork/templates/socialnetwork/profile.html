@@ -1,0 +1,38 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block user-info %}
+    {{user.first_name}} {{user.last_name}} 
+    <!-- username={{user.username}} -->
+
+    <form action="{% url 'logout' %}" method="get">
+        <input type="submit" value="Logout" class="btn__logout my-lg-2">
+    </form>
+{% endblock %}
+
+{% block profile-info %}
+    <div class="author__img m-auto">
+        <img src="https://images.vexels.com/media/users/3/137047/isolated/preview/5831a17a290077c646a48c4db78a81bb-user-profile-blue-icon-by-vexels.png" alt>
+    </div>
+    <h2 class="author__name mb-2 mt-3">{{user.first_name}} {{user.last_name}} </h2>
+    <div class="following m-auto">
+        <p>is following..</p>
+        <a href="{% url 'profile' %}?last=jisup"><img src="https://avatars3.githubusercontent.com/u/2093032?s=400&v=4" class="author__img" alt></a>
+        <a href="{% url 'profile' %}?last=sunny"><img src="https://scontent.fagc1-2.fna.fbcdn.net/v/t1.0-9/22366528_1152721191495871_6372897644613021623_n.jpg?oh=987b3554950424d892d953a6602d53c2&oe=5B14627E" class ="author__img mx-2" alt></a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="profile-upload mx-4">
+        <p>Upload your profile.</p>
+        
+        <form action="">
+            Bio <input type="text" name="comment" value="" class = "mx-2">
+            <input type="submit" value="Submit" class="btn__comment mx-2">
+        </form> 
+        <br>
+        <div class="photo-upload">
+            <label for="exampleInputFile">Photo Upload</label>
+            <input type="file" id="exampleInputFile" class="btn__comment mx-3">
+        </div>
+    </div>
+{% endblock %}

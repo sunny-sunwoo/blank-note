@@ -1,0 +1,51 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block user-info %}
+    {{user.first_name}} {{user.last_name}} 
+    <!-- username={{user.username}} -->
+
+    <form action="{% url 'logout' %}" method="get">
+        <input type="submit" value="Logout" class="btn__logout my-lg-2">
+    </form>
+{% endblock %}
+
+{% block profile-info %}
+    <div class="author__img m-auto">
+        <img src="http://www.isri.cmu.edu/images/people/eppinger-jeff.JPG" alt>
+    </div>
+    <h2 class="author__name mb-2 mt-3">Jeff Eppinger</h2>
+    <p class="author__text mb-3">
+        Computer Scientist <br>
+        Teaching at ETC, CMU.
+    </p>
+    <button class="btn-subscribe px-3 py-2 mb-5" type="button">Follow</button>
+{% endblock %}
+
+{% block search-bar %}
+   <!-- Main -->
+    <main class="main">
+            <section class="posts container">
+                <h2 class="sr-only">Global Stream</h2>
+                <ul class="post__list">
+                    <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=jeff">
+                                    <h4 class="post__title mb-4">
+                                        Love means <br>
+                                        never having to say<br>
+                                        you're sorry.
+                                    </h4>
+                                    <p class="post__text"><em>Jeff</em></p>
+                                    <p class="post__date">Feb 11, 2018</p>
+                                </a><br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                    </li>
+                </ul>
+            </section>
+    </main>
+{% endblock %}   
+<!-- //Main -->

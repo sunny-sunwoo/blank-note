@@ -1,0 +1,85 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block user-info %}
+    {{user.first_name}} {{user.last_name}} 
+    <!-- username={{user.username}} -->
+
+    <form action="{% url 'logout' %}" method="get">
+        <input type="submit" value="Logout" class="btn__logout my-lg-2">
+    </form>
+{% endblock %}
+
+{% block profile-info %}
+    <div class="following m-auto">
+        <p>You are following..</p>
+        <a href="{% url 'profile' %}?last=jisup"><img src="https://avatars3.githubusercontent.com/u/2093032?s=400&v=4" class="author__img" alt></a>
+        <a href="{% url 'profile' %}?last=sunny"><img src="https://scontent.fagc1-2.fna.fbcdn.net/v/t1.0-9/22366528_1152721191495871_6372897644613021623_n.jpg?oh=987b3554950424d892d953a6602d53c2&oe=5B14627E" class ="author__img mx-2" alt></a>
+    </div>
+{% endblock %}
+
+{% block search-bar %}
+   <!-- Main -->
+    <main class="main">
+            <section class="posts container">
+                <h2 class="sr-only">Global Stream</h2>
+                <ul class="post__list">
+                    <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=jisup">
+                                    <h4 class="post__title mb-4">
+                                        You make me<br>
+                                        want to be a<br>
+                                        better man.
+                                    </h4>
+                                    <p class="post__text"><em>Jisup</em></p>
+                                    <p class="post__date">Feb 13, 2018</p>
+                                </a>
+                                <a href="{% url 'profile' %}?last=sunny"><p class="comment__text"><em>Sunny</em> - Hi, Jisup! &hearts;  -- Feb 13, 2018</p></a>
+                                <br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                            
+                    </li>
+                    <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=sunny">
+                                    <h4 class="post__title mb-4">
+                                        We'll always<br>
+                                        have Paris.
+                                    </h4>
+                                    <p class="post__text"><em>Sunny</em></p>
+                                    <p class="post__date">Feb 12, 2018</p>
+                                </a>
+                                <a href="{% url 'profile' %}?last=jisup"><p class="comment__text"><em>Jisup</em> - Let's go!! Paris!! -- Feb 13, 2018</p></a>
+                                <a href="{% url 'profile' %}?last=jeff"><p class="comment__text"><em>Jeff</em> - Do your homework first. &#x2639; -- Feb 13, 2018</p></a>
+                                <br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                    </li>
+                    <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=jisup">
+                                    <h4 class="post__title mb-4">
+                                        If you're a bird,<br>
+                                        I'm a bird.
+                                    </h4>
+                                    <p class="post__text"><em>Jisup</em></p>
+                                    <p class="post__date">Feb 10, 2018</p>
+                                </a><br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                    </li>                       
+                </ul>
+            </section>
+    </main>
+{% endblock %}   
+<!-- //Main -->

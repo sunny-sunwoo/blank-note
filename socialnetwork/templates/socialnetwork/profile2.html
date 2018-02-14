@@ -1,0 +1,53 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block user-info %}
+    {{user.first_name}} {{user.last_name}} 
+    <!-- username={{user.username}} -->
+
+    <form action="{% url 'logout' %}" method="get">
+        <input type="submit" value="Logout" class="btn__logout my-lg-2">
+    </form>
+{% endblock %}
+
+{% block profile-info %}
+    <div class="author__img m-auto">
+        <img src="https://scontent.fagc1-2.fna.fbcdn.net/v/t1.0-9/22366528_1152721191495871_6372897644613021623_n.jpg?oh=987b3554950424d892d953a6602d53c2&oe=5B14627E" alt>
+    </div>
+    <h2 class="author__name mb-2 mt-3">Sunny Park</h2>
+    <p class="author__text mb-3">
+        UX Designer <br>
+        Studying at ETC, CMU.
+    </p>
+    <button class="btn-subscribe px-3 py-2 mb-5" type="button">Follow</button>
+{% endblock %}
+
+{% block search-bar %}
+   <!-- Main -->
+    <main class="main">
+            <section class="posts container">
+                <h2 class="sr-only">Global Stream</h2>
+                <ul class="post__list">
+                   <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=sunny">
+                                    <h4 class="post__title mb-4">
+                                        We'll always<br>
+                                        have Paris.
+                                    </h4>
+                                    <p class="post__text"><em>Sunny</em></p>
+                                    <p class="post__date">Feb 12, 2018</p>
+                                </a>
+                                <a href="{% url 'profile' %}?last=jisup"><p class="comment__text"><em>Jisup</em> - Let's go!! Paris!! -- Feb 13, 2018</p></a>
+                                <a href="{% url 'profile' %}?last=jeff"><p class="comment__text"><em>Jeff</em> - Do your homework first. &#x2639; -- Feb 13, 2018</p></a>
+                                <br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                    </li>
+                </ul>
+            </section>
+    </main>
+{% endblock %}   
+<!-- //Main -->

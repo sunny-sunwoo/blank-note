@@ -1,0 +1,119 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block user-info %}
+    {{user.first_name}} {{user.last_name}} 
+    <!-- username={{user.username}} -->
+
+    <form action="{% url 'logout' %}" method="get">
+        <input type="submit" value="Logout" class="btn__logout my-lg-2">
+    </form>
+{% endblock %}
+
+
+{% block post-create %}
+    <div class="container">
+        <form action="" class="row">
+            <div class="col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4 my-5">
+                <input type="text" name="comment" class="form-control" placeholder="What's on your mind?" >
+                <input type="submit" value="Submit" class="btn__logout mx-2 my-2">
+            </div>
+        </form> 
+    </div>
+{% endblock %}
+
+{% block search-bar %}
+   <!-- Main -->
+    <main class="main">
+            <section class="posts container">
+                <h2 class="sr-only">Global Stream</h2>
+                <ul class="post__list">
+                    <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=jisup">
+                                    <h4 class="post__title mb-4">
+                                        You make me<br>
+                                        want to be a<br>
+                                        better man.
+                                    </h4>
+                                    <p class="post__text"><em>Jisup</em></p>
+                                    <p class="post__date">Feb 13, 2018</p>
+                                </a>
+                                <a href="{% url 'profile' %}?last=sunny"><p class="comment__text"><em>Sunny</em> - Hi, Jisup! &hearts;  -- Feb 13, 2018</p></a>
+                                <br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                            
+                    </li>
+                    <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=sunny">
+                                    <h4 class="post__title mb-4">
+                                        We'll always<br>
+                                        have Paris.
+                                    </h4>
+                                    <p class="post__text"><em>Sunny</em></p>
+                                    <p class="post__date">Feb 12, 2018</p>
+                                </a>
+                                <a href="{% url 'profile' %}?last=jisup"><p class="comment__text"><em>Jisup</em> - Let's go!! Paris!! -- Feb 13, 2018</p></a>
+                                <a href="{% url 'profile' %}?last=jeff"><p class="comment__text"><em>Jeff</em> - Do your homework first. &#x2639; -- Feb 13, 2018</p></a>
+                                <br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                    </li>
+                    <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=jeff">
+                                    <h4 class="post__title mb-4">
+                                        Love means <br>
+                                        never having to say<br>
+                                        you're sorry.
+                                    </h4>
+                                    <p class="post__text"><em>Jeff</em></p>
+                                    <p class="post__date">Feb 11, 2018</p>
+                                </a><br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                    </li>
+                    <li class="post__item mb-5 row">
+                            <div class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+                                <a href="{% url 'profile' %}?last=jisup">
+                                    <h4 class="post__title mb-4">
+                                        If you're a bird,<br>
+                                        I'm a bird.
+                                    </h4>
+                                    <p class="post__text"><em>Jisup</em></p>
+                                    <p class="post__date">Feb 10, 2018</p>
+                                </a><br>
+                                <form action="">
+                                <input type="text" name="comment" class="form-control" placeholder="Any comments?">
+                                <input type="submit" value="Submit" class="btn__logout my-2">
+                                </form> 
+                            </div>
+                    </li>                       
+                </ul>
+            </section>
+    </main>
+        <!-- //Main -->
+
+
+    <!-- <script>
+        var alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        for (var i=0; i<alphabet.length; i++) {
+            document.write(
+                '<a href="{% url 'search' %}?last=' + alphabet.charAt(i) + '"">' +
+                alphabet.charAt(i) + '</a>\n')
+        }
+    </script>
+    <form action="{% url 'create' %}" method="get">
+        <input type="submit" value="New Entry">
+    </form> -->
+{% endblock %}
